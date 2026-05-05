@@ -1,26 +1,31 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
 const casos = [
-  { id: 1, categoria: "FACIAL", paciente: "M.S.", tratamento: "Bioestimulação Facial", tempo: "3 meses", nota: 5, texto: "Minha pele nunca ficou tão bonita. O glow é自然的 demais." },
+  { id: 1, categoria: "FACIAL", paciente: "M.S.", tratamento: "Bioestimulação Facial", tempo: "3 meses", nota: 5, texto: "Minha pele nunca ficou tão bonita. O glow é natural demais." },
   { id: 2, categoria: "LABIAL", paciente: "A.R.", tratamento: "Preenchimento Labial", tempo: "60 dias", nota: 5, texto: "Exatamente o que eu queria. Natural e harmonioso." },
   { id: 3, categoria: "CORPORAL", paciente: "C.P.", tratamento: "Criolipólise + Radiofrequência", tempo: "4 meses", nota: 5, texto: "Perdi 4 cm na cintura. Não acreditei até medir." },
-  { id: 4, categoria: "CAPILAR", paciente: "L.T.", tratamento: "Mesoterapia Capilar", tempo: "90 dias", nota: 5, texto: "Meu cabelo voltou a crescer. Finamente resolvi a queda." },
-  { id: 5, categoria: "FACIAL", paciente: "R.B.", tratamento: "Toxina Botulínica", tempo: "30 dias", nota: 5, texto: "Testas completamente lisa sem parecer congelada." },
-  { id: 6, categoria: "MINIMAMENTE INVASIVO", paciente: "F.J.", tratamento: "Fios de PDO", tempo: "2 meses", nota: 5, texto: "Olho para o espelho e não acredito no antes/depois." },
+  { id: 4, categoria: "CAPILAR", paciente: "L.T.", tratamento: "Mesoterapia Capilar", tempo: "90 dias", nota: 5, texto: "Meu cabelo voltou a crescer. Finalmente resolvi a queda." },
+  { id: 5, categoria: "FACIAL", paciente: "R.B.", tratamento: "Toxina Botulínica", tempo: "30 dias", nota: 5, texto: "Testa completamente lisa sem parecer congelada." },
+  { id: 6, categoria: "MINIMAMENTE INVASIVO", paciente: "F.J.", tratamento: "Fios de PDO", tempo: "2 meses", nota: 5, texto: "Olho para o espelho e não acredito no antes e depois." },
   { id: 7, categoria: "FACIAL", paciente: "D.K.", tratamento: "Skinbooster", tempo: "45 dias", nota: 5, texto: "Hidratação profunda que mudou minha pele." },
-  { id: 8, categoria: "CORPORAL", paciente: "S.M.", tratamento: "Lipo de Papada", tempo: "60 dias", nota: 5, texto: "Queixo duplo sumiu. Contorno definidas." },
+  { id: 8, categoria: "CORPORAL", paciente: "S.M.", tratamento: "Lipo de Papada", tempo: "60 dias", nota: 5, texto: "Queixo duplo sumiu. Contorno definido." },
   { id: 9, categoria: "FACIAL", paciente: "T.A.", tratamento: "Peel Químico", tempo: "90 dias", nota: 5, texto: "Manchas sumiram e textura melhorou 100%." },
 ];
 
 const filtros = ["Todos", "Facial", "Corporal", "Capilar", "-30 dias", "+3 meses"];
 
 export default function ResultadosPage() {
+  const [filtroAtivo, setFiltroAtivo] = useState("Todos");
+
   return (
     <main>
       <Navbar />
-      
+
       {/* HERO */}
       <section className="bg-bg-primary pt-32 pb-20">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-16 items-center">
@@ -45,9 +50,13 @@ export default function ResultadosPage() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="w-1/2 bg-bg-blush rounded-[24px] h-[400px]" />
-            <div className="w-px bg-accent-gold mx-2" />
-            <div className="w-1/2 bg-accent-gold/20 rounded-[24px] h-[400px]" />
+            <div className="flex-1 bg-bg-blush rounded-[24px] h-[400px] flex items-end justify-center pb-4">
+              <span className="text-text-muted text-sm font-body">Antes</span>
+            </div>
+            <div className="w-px bg-accent-gold/30" />
+            <div className="flex-1 bg-accent-gold/20 rounded-[24px] h-[400px] flex items-end justify-center pb-4">
+              <span className="text-accent-gold text-sm font-body">Depois</span>
+            </div>
           </div>
         </div>
       </section>
@@ -56,12 +65,13 @@ export default function ResultadosPage() {
       <section className="bg-white py-6 border-b border-border-rose">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="flex gap-4">
-            {filtros.map((filtro, index) => (
-              <button 
-                key={index}
+            {filtros.map((filtro) => (
+              <button
+                key={filtro}
+                onClick={() => setFiltroAtivo(filtro)}
                 className={`px-6 py-2 rounded-full font-body font-medium text-sm transition-all duration-300 ${
-                  index === 0 
-                    ? "bg-accent-gold text-white" 
+                  filtroAtivo === filtro
+                    ? "bg-accent-gold text-white"
                     : "bg-bg-blush text-text-primary hover:bg-accent-gold hover:text-white"
                 }`}
               >
@@ -84,7 +94,7 @@ export default function ResultadosPage() {
                 </div>
                 <span className="label text-accent-gold">{caso.categoria}</span>
                 <p className="text-text-muted text-xs mt-1">Paciente {caso.paciente}</p>
-                <p className="font-display italic text-[20px] text-text-primary mt-3">"{caso.texto}"</p>
+                <p className="font-display italic text-xl text-text-primary mt-3">"{caso.texto}"</p>
                 <div className="flex justify-between items-center mt-4 pt-4 border-t border-border-rose">
                   <span className="text-text-muted text-sm">{caso.tempo}</span>
                   <div className="flex gap-1">
@@ -130,7 +140,7 @@ export default function ResultadosPage() {
       <section className="bg-bg-blush py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-20 items-center">
           <div className="text-right">
-            <span className="font-display text-[150px] text-accent-gold leading-none block" style={{ transform: 'scaleX(-1)' }}>"</span>
+            <span className="font-display text-[150px] text-accent-gold leading-none block" style={{ transform: "scaleX(-1)" }}>"</span>
           </div>
           <div>
             <p className="font-display italic text-[32px] text-text-primary mb-8">
@@ -151,8 +161,8 @@ export default function ResultadosPage() {
               { plataforma: "Doctoralia", nota: "5.0", total: "324 avaliações" },
               { plataforma: "Reclame Aqui", nota: "9.8", total: "0 reclamações" },
             ].map((item, index) => (
-              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center">
-                <h3 className="font-display font-semibold text-[24px] text-text-primary mb-2">{item.plataforma}</h3>
+              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
+                <h3 className="font-display font-semibold text-2xl text-text-primary mb-2">{item.plataforma}</h3>
                 <div className="flex justify-center items-center gap-2 mb-2">
                   <span className="text-accent-gold text-3xl font-display italic">{item.nota}</span>
                   <span className="text-accent-gold">★</span>
@@ -171,7 +181,7 @@ export default function ResultadosPage() {
             Seu resultado pode ser o próximo.
           </h2>
           <p className="text-white/80 text-lg mb-10">Agende sua avaliação e conquiste a transformação que você merece.</p>
-          <Link 
+          <Link
             href="/agendamento"
             className="bg-white text-text-primary rounded-full px-10 py-4 font-body font-semibold hover:bg-bg-blush transition-all duration-300"
           >

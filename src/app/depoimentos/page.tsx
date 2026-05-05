@@ -3,22 +3,22 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 const depoimentos = [
-  { nome: "Paciente A.C.", tratamento: "Bioestimulação Facial", nota: 5, texto: "Minha pele ficou impecável. O resultado superou todas as expectativas. Equipe extremamente profissional." },
-  { nome: "Paciente M.R.", tratamento: "Preenchimento Labial", nota: 5, texto: "Quis lábios naturais e ficou perfeito. Não artificial nem exagerado. Recomendo para todas as minhas amigas." },
-  { nome: "Paciente L.F.", tratamento: "Toxina Botulínica", nota: 5, texto: "Testa lisinha sem parecer 'congelada'. As pessoas notam que estou bem, mas não percebem o procedimento." },
-  { nome: "Paciente R.S.", tratamento: "Fios de PDO", nota: 5, texto: "Com 40 anos, meu rosto precisava de um up. Os fios liftingaram sem necessidade de cirurgia. Incrível!" },
-  { nome: "Paciente T.B.", tratamento: "Criolipólise", nota: 5, texto: "Perdi 5 cm na barriga em 2 meses. Não acreditei quando medi. Tecnologia realmente funciona." },
-  { nome: "Paciente D.P.", tratamento: "Skinbooster", nota: 5, texto: "Hidratação profunda que transformou minha pele opaca em algo brilhante e saudável." },
-  { nome: "Paciente C.H.", tratamento: "Mesoterapia Capilar", nota: 5, texto: "Minha queda de cabelo parou completamente. depois de 3 meses, novos fios nascendo." },
-  { nome: "Paciente S.W.", tratamento: "Radiofrequência Corporal", nota: 5, texto: "Celulite melhorou muito. Minha pele está muito mais firme e lisa." },
-  { nome: "Paciente J.K.", tratamento: "Peel Químico", nota: 5, texto: "Manchas de sol sumiram após 2 sessões. Pele uniforme pela primeira vez em anos." },
+  { nome: "A.C.", tratamento: "Bioestimulação Facial", nota: 5, texto: "Minha pele ficou impecável. O resultado superou todas as expectativas. Equipe extremamente profissional." },
+  { nome: "M.R.", tratamento: "Preenchimento Labial", nota: 5, texto: "Quis lábios naturais e ficou perfeito. Não artificial nem exagerado. Recomendo para todas as minhas amigas." },
+  { nome: "L.F.", tratamento: "Toxina Botulínica", nota: 5, texto: "Testa lisinha sem parecer 'congelada'. As pessoas notam que estou bem, mas não percebem o procedimento." },
+  { nome: "R.S.", tratamento: "Fios de PDO", nota: 5, texto: "Com 40 anos, meu rosto precisava de um up. Os fios liftingaram sem necessidade de cirurgia. Incrível!" },
+  { nome: "T.B.", tratamento: "Criolipólise", nota: 5, texto: "Perdi 5 cm na barriga em 2 meses. Não acreditei quando medi. Tecnologia realmente funciona." },
+  { nome: "D.P.", tratamento: "Skinbooster", nota: 5, texto: "Hidratação profunda que transformou minha pele opaca em algo brilhante e saudável." },
+  { nome: "C.H.", tratamento: "Mesoterapia Capilar", nota: 5, texto: "Minha queda de cabelo parou completamente. Depois de 3 meses, novos fios nascendo." },
+  { nome: "S.W.", tratamento: "Radiofrequência Corporal", nota: 5, texto: "Celulite melhorou muito. Minha pele está muito mais firme e lisa." },
+  { nome: "J.K.", tratamento: "Peel Químico", nota: 5, texto: "Manchas de sol sumiram após 2 sessões. Pele uniforme pela primeira vez em anos." },
 ];
 
 export default function DepoimentosPage() {
   return (
     <main>
       <Navbar />
-      
+
       {/* HERO */}
       <section className="bg-bg-primary pt-32 pb-20">
         <div className="max-w-[1440px] mx-auto px-8">
@@ -28,7 +28,7 @@ export default function DepoimentosPage() {
               Histórias reais de <br/><span className="text-accent-gold">transformação.</span>
             </h1>
           </div>
-          
+
           <div className="flex justify-center gap-20">
             <div className="text-center">
               <span className="font-display italic text-accent-gold text-[48px]">847+</span>
@@ -54,7 +54,7 @@ export default function DepoimentosPage() {
       <section className="bg-bg-dark py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-20 items-center">
           <div>
-            <span className="font-display text-[150px] text-accent-gold leading-none block" style={{ transform: 'scaleX(-1)' }}>"</span>
+            <span className="font-display text-[150px] text-accent-gold leading-none block">"</span>
           </div>
           <div>
             <p className="font-display italic text-[36px] text-bg-blush mb-8">
@@ -76,11 +76,11 @@ export default function DepoimentosPage() {
                     <span key={i} className="text-accent-gold">★</span>
                   ))}
                 </div>
-                <p className="font-display italic text-[20px] text-text-primary mb-6">"{depo.texto}"</p>
+                <p className="font-display italic text-xl text-text-primary mb-6">"{depo.texto}"</p>
                 <div className="pt-4 border-t border-border-rose">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-bg-blush rounded-full flex items-center justify-center">
-                      <span className="text-accent-gold font-body font-semibold text-sm">{depo.nome.charAt(8)}{depo.nome.charAt(9)}</span>
+                      <span className="text-accent-gold font-body font-semibold text-sm">{depo.nome}</span>
                     </div>
                     <div>
                       <p className="font-body font-semibold text-sm text-text-primary">{depo.nome}</p>
@@ -98,7 +98,7 @@ export default function DepoimentosPage() {
       <section className="bg-bg-blush py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8">
           <h2 className="font-display font-bold text-[52px] text-text-primary text-center mb-16">Depoimentos em Vídeo</h2>
-          
+
           <div className="grid grid-cols-3 gap-8">
             {[1, 2, 3].map((video, index) => (
               <div key={index} className="bg-bg-dark rounded-[24px] h-64 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
@@ -121,8 +121,8 @@ export default function DepoimentosPage() {
               { plataforma: "Doctoralia", nota: "5.0★", total: "324 avaliações" },
               { plataforma: "Reclame Aqui", nota: "9.8★", total: "0 reclamações" },
             ].map((item, index) => (
-              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center">
-                <h3 className="font-display font-semibold text-[24px] text-text-primary mb-4">{item.plataforma}</h3>
+              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
+                <h3 className="font-display font-semibold text-2xl text-text-primary mb-4">{item.plataforma}</h3>
                 <span className="text-accent-gold text-4xl font-display italic block mb-2">{item.nota}</span>
                 <p className="text-text-muted text-sm">{item.total}</p>
               </div>
@@ -138,7 +138,7 @@ export default function DepoimentosPage() {
             Sua história começa com uma consulta
           </h2>
           <p className="text-white/80 text-lg mb-10">Junte-se a centenas de mulheres que transformaram sua confiança na Velour.</p>
-          <Link 
+          <Link
             href="/agendamento"
             className="bg-white text-text-primary rounded-full px-10 py-4 font-body font-semibold hover:bg-bg-blush transition-all duration-300"
           >

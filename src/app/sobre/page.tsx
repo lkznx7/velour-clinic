@@ -13,7 +13,7 @@ export default function SobrePage() {
   return (
     <main>
       <Navbar />
-      
+
       {/* HERO */}
       <section className="bg-bg-dark pt-32 pb-20 min-h-[70vh]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-16 items-center">
@@ -25,8 +25,8 @@ export default function SobrePage() {
           </div>
           <div className="relative">
             <div className="bg-[#2A1E17] rounded-[24px] h-[480px]" />
-            <div className="absolute bottom-8 left-8 bg-white rounded-2xl px-6 py-4">
-              <p className="font-display font-semibold text-[20px] text-text-primary">Dra. Fernanda Lux</p>
+            <div className="absolute bottom-8 left-8 bg-white rounded-2xl px-6 py-4 shadow-[0_20px_60px_rgba(196,149,106,0.12)]">
+              <p className="font-display font-semibold text-xl text-text-primary">Dra. Fernanda Lux</p>
               <p className="text-text-muted text-sm">Fundadora</p>
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function SobrePage() {
 
       {/* MANIFESTO */}
       <section className="bg-bg-primary py-[100px]">
-        <div className="max-w-[1440px] mx-auto px-8 text-center px-[240px]">
+        <div className="max-w-[1000px] mx-auto px-8 text-center">
           <p className="font-display italic text-[52px] text-text-primary leading-tight mb-8">
             "Beleza real não é sobre parecer diferente. <br/>É sobre finalmente parecer você mesma."
           </p>
@@ -52,16 +52,16 @@ export default function SobrePage() {
             </h2>
           </div>
           <div className="space-y-8">
-            <div className="pt-6 border-t border-accent-gold">
-              <h3 className="font-display font-semibold text-[28px] text-text-primary mb-3">Precisão Científica</h3>
+            <div className="pt-6 border-t-2 border-accent-gold">
+              <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">Precisão Científica</h3>
               <p className="text-text-muted">Cada procedimento é baseado em evidências científicas. Não seguimos tendências, priorizamos resultados comprovados.</p>
             </div>
-            <div className="pt-6 border-t border-accent-gold">
-              <h3 className="font-display font-semibold text-[28px] text-text-primary mb-3">Cuidado Individualizado</h3>
+            <div className="pt-6 border-t-2 border-accent-gold">
+              <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">Cuidado Individualizado</h3>
               <p className="text-text-muted">Cada paciente é único. Nossos protocolos são personalizados para suas características e objetivos específicos.</p>
             </div>
-            <div className="pt-6 border-t border-accent-gold">
-              <h3 className="font-display font-semibold text-[28px] text-text-primary mb-3">Resultados Éticos</h3>
+            <div className="pt-6 border-t-2 border-accent-gold">
+              <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">Resultados Éticos</h3>
               <p className="text-text-muted">Prometemos apenas o que podemos entregar. Honestidade é a base de toda nossa relação com as pacientes.</p>
             </div>
           </div>
@@ -72,12 +72,12 @@ export default function SobrePage() {
       <section className="bg-bg-blush py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8">
           <h2 className="font-display font-bold text-[52px] text-text-primary text-center mb-16">Nossa Equipe</h2>
-          
+
           <div className="grid grid-cols-4 gap-8">
             {equipe.map((membro, index) => (
               <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
                 <div className="w-24 h-24 bg-bg-blush rounded-full mx-auto mb-6" />
-                <h3 className="font-display font-semibold text-[20px] text-text-primary">{membro.nome}</h3>
+                <h3 className="font-display font-semibold text-xl text-text-primary">{membro.nome}</h3>
                 <p className="label text-accent-gold mt-2 mb-4">{membro.especialidade}</p>
                 <p className="text-text-muted text-sm">{membro.bio}</p>
               </div>
@@ -131,7 +131,7 @@ export default function SobrePage() {
             Venha nos conhecer
           </h2>
           <p className="text-white/80 text-lg mb-10">Agende uma visita e descubra como podemos transformar sua confiança.</p>
-          <Link 
+          <Link
             href="/agendamento"
             className="bg-white text-text-primary rounded-full px-10 py-4 font-body font-semibold hover:bg-bg-blush transition-all duration-300"
           >

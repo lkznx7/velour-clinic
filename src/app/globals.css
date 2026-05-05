@@ -10,23 +10,9 @@
   --color-text-primary: #1C1410;
   --color-text-muted: #8B6F5C;
   --color-border-rose: rgba(196,149,106,0.15);
-  
+
   --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYrEtFmS.woff2') format('woff2');
-  font-weight: 400 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TR_V.woff2') format('woff2');
-  font-weight: 400 700;
-  font-display: swap;
 }
 
 * {
