@@ -15,29 +15,30 @@ export default function SobrePage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="bg-bg-dark pt-32 pb-20 min-h-[70vh]">
-        <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-16 items-center">
+      <section className="bg-bg-dark pt-32 pb-20 min-h-[70vh] flex items-center">
+        <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-16 items-center py-20">
           <div>
-            <p className="label text-accent-gold mb-4">NOSSA HISTÓRIA</p>
-            <h1 className="font-display font-bold text-[80px] text-bg-blush leading-tight">
+            <p className="label text-accent-gold mb-6 tracking-widest">NOSSA HISTÓRIA</p>
+            <h1 className="font-display font-bold text-[80px] text-bg-blush leading-[1.05]">
               Fundada na crença <br/>de que beleza é <br/><span className="text-accent-gold">autoconfiança.</span>
             </h1>
           </div>
           <div className="relative">
-            <div className="bg-[#2A1E17] rounded-[24px] h-[480px]" />
-            <div className="absolute bottom-8 left-8 bg-white rounded-2xl px-6 py-4 shadow-[0_20px_60px_rgba(196,149,106,0.12)]">
-              <p className="font-display font-semibold text-xl text-text-primary">Dra. Fernanda Lux</p>
-              <p className="text-text-muted text-sm">Fundadora</p>
+            <div className="bg-gradient-to-br from-[#2A1E17] to-accent-gold/10 rounded-[32px] h-[480px] shadow-2xl" />
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-border-rose">
+              <p className="font-display font-semibold text-2xl text-text-primary">Dra. Fernanda Lux</p>
+              <p className="text-text-muted text-sm">Fundadora · 12 anos de experiência</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-bg-primary py-[100px]">
-        <div className="max-w-[1000px] mx-auto px-8 text-center">
-          <p className="font-display italic text-[52px] text-text-primary leading-tight mb-8">
-            "Beleza real não é sobre parecer diferente. <br/>É sobre finalmente parecer você mesma."
+      <section className="bg-bg-primary py-[120px]">
+        <div className="max-w-[900px] mx-auto px-8 text-center">
+          <div className="w-12 h-px bg-accent-gold mx-auto mb-8" />
+          <p className="font-display italic text-[48px] text-text-primary leading-tight mb-8">
+            "Beleza real não é sobre parecer diferente. É sobre finalmente parecer você mesma."
           </p>
           <span className="label text-accent-gold">— Velour Clinic</span>
         </div>
@@ -47,39 +48,41 @@ export default function SobrePage() {
       <section className="bg-bg-primary py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-20">
           <div>
+            <p className="label text-accent-gold mb-4 tracking-widest">NOSSOS VALORES</p>
             <h2 className="font-display font-bold text-[52px] text-text-primary">
               O que nos guia
             </h2>
           </div>
-          <div className="space-y-8">
-            <div className="pt-6 border-t-2 border-accent-gold">
-              <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">Precisão Científica</h3>
-              <p className="text-text-muted">Cada procedimento é baseado em evidências científicas. Não seguimos tendências, priorizamos resultados comprovados.</p>
-            </div>
-            <div className="pt-6 border-t-2 border-accent-gold">
-              <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">Cuidado Individualizado</h3>
-              <p className="text-text-muted">Cada paciente é único. Nossos protocolos são personalizados para suas características e objetivos específicos.</p>
-            </div>
-            <div className="pt-6 border-t-2 border-accent-gold">
-              <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">Resultados Éticos</h3>
-              <p className="text-text-muted">Prometemos apenas o que podemos entregar. Honestidade é a base de toda nossa relação com as pacientes.</p>
-            </div>
+          <div className="space-y-10">
+            {[
+              { title: "Precisão Científica", desc: "Cada procedimento é baseado em evidências científicas. Não seguimos tendências, priorizamos resultados comprovados." },
+              { title: "Cuidado Individualizado", desc: "Cada paciente é único. Nossos protocolos são personalizados para suas características e objetivos específicos." },
+              { title: "Resultados Éticos", desc: "Prometemos apenas o que podemos entregar. Honestidade é a base de toda nossa relação com as pacientes." },
+            ].map((item, idx) => (
+              <div key={idx} className="pt-8 border-t-2 border-accent-gold/30">
+                <h3 className="font-display font-semibold text-2xl text-text-primary mb-3">{item.title}</h3>
+                <p className="text-text-muted leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* EQUIPE */}
-      <section className="bg-bg-blush py-[100px]">
+      <section className="bg-bg-blush py-[120px]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <h2 className="font-display font-bold text-[52px] text-text-primary text-center mb-16">Nossa Equipe</h2>
+          <div className="text-center mb-16">
+            <p className="label text-accent-gold mb-4 tracking-widest">NOSSA EQUIPE</p>
+            <h2 className="font-display font-bold text-[52px] text-text-primary">Profissionais de excelência</h2>
+          </div>
 
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-4 gap-10">
             {equipe.map((membro, index) => (
-              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
-                <div className="w-24 h-24 bg-bg-blush rounded-full mx-auto mb-6" />
+              <div key={index} className="bg-white border border-border-rose rounded-[24px] p-10 text-center hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(196,149,106,0.15)] transition-all duration-300">
+                <div className="w-24 h-24 bg-gradient-to-br from-bg-blush to-accent-gold/10 rounded-full mx-auto mb-6" />
                 <h3 className="font-display font-semibold text-xl text-text-primary">{membro.nome}</h3>
                 <p className="label text-accent-gold mt-2 mb-4">{membro.especialidade}</p>
-                <p className="text-text-muted text-sm">{membro.bio}</p>
+                <p className="text-text-muted text-sm leading-relaxed">{membro.bio}</p>
               </div>
             ))}
           </div>
@@ -87,11 +90,12 @@ export default function SobrePage() {
       </section>
 
       {/* CLÍNICA */}
-      <section className="bg-bg-dark py-[100px]">
+      <section className="bg-bg-dark py-[120px]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-20 items-center">
-          <div className="bg-[#2A1E17] rounded-[24px] h-[500px]" />
+          <div className="bg-gradient-to-br from-[#2A1E17] to-accent-gold/10 rounded-[32px] h-[500px] shadow-2xl" />
           <div>
-            <h2 className="font-display font-bold text-[52px] text-bg-blush mb-10">
+            <p className="label text-accent-gold mb-4 tracking-widest">NOSSO ESPAÇO</p>
+            <h2 className="font-display font-bold text-[52px] text-bg-blush mb-10 leading-[1.1]">
               Um espaço pensado <br/>para você
             </h2>
             <div className="space-y-6">
@@ -102,7 +106,9 @@ export default function SobrePage() {
                 "Equipe altamente qualificada",
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-4">
-                  <span className="w-2 h-2 rounded-full bg-accent-gold" />
+                  <div className="w-8 h-8 rounded-full bg-accent-gold/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-accent-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
                   <span className="text-bg-blush font-body">{item}</span>
                 </div>
               ))}
@@ -116,7 +122,7 @@ export default function SobrePage() {
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="flex justify-center gap-8 flex-wrap">
             {["CFM", "SBDV", "ISO 9001", "ANVISA", "12 Anos de Excelência"].map((cert, index) => (
-              <div key={index} className="bg-bg-blush px-8 py-3 rounded-full">
+              <div key={index} className="bg-bg-blush px-8 py-3 rounded-full border border-border-rose">
                 <span className="text-text-primary font-body font-semibold text-sm">{cert}</span>
               </div>
             ))}
@@ -125,15 +131,15 @@ export default function SobrePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent-gold py-[120px]">
+      <section className="bg-gradient-to-br from-accent-gold to-accent-mocha py-[140px]">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="font-display font-extrabold text-[72px] text-white mb-6">
+          <h2 className="font-display font-extrabold text-[72px] text-white mb-6 leading-[1.05]">
             Venha nos conhecer
           </h2>
-          <p className="text-white/80 text-lg mb-10">Agende uma visita e descubra como podemos transformar sua confiança.</p>
+          <p className="text-white/80 text-lg mb-12">Agende uma visita e descubra como podemos transformar sua confiança.</p>
           <Link
             href="/agendamento"
-            className="bg-white text-text-primary rounded-full px-10 py-4 font-body font-semibold hover:bg-bg-blush transition-all duration-300"
+            className="bg-white text-text-primary rounded-full px-12 py-5 font-body font-semibold hover:bg-bg-blush transition-all duration-300 text-lg shadow-xl"
           >
             Agendar Visita →
           </Link>

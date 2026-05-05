@@ -34,17 +34,17 @@ export default function TratamentosPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="bg-bg-dark pt-32 pb-20 min-h-[70vh]">
-        <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-16 items-center">
+      <section className="bg-bg-dark pt-32 pb-20 min-h-[70vh] flex items-center">
+        <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-16 items-center py-20">
           <div>
-            <p className="label text-accent-gold mb-4">PORTFÓLIO COMPLETO</p>
-            <h1 className="font-display font-bold text-[80px] text-bg-blush leading-tight">
-              Tratamentos que <br/>transformam.
+            <p className="label text-accent-gold mb-6 tracking-widest">PORTFÓLIO COMPLETO</p>
+            <h1 className="font-display font-bold text-[80px] text-bg-blush leading-[1.05]">
+              Tratamentos que <br/><span className="text-accent-gold">transformam.</span>
             </h1>
           </div>
           <div className="relative">
-            <div className="bg-[#2A1E17] rounded-[24px] h-[480px] w-full" />
-            <div className="absolute bottom-8 left-8 bg-accent-gold rounded-2xl px-6 py-3">
+            <div className="bg-gradient-to-br from-[#2A1E17] to-accent-gold/10 rounded-[32px] h-[480px] w-full shadow-2xl" />
+            <div className="absolute -bottom-6 -left-6 bg-accent-gold rounded-2xl px-8 py-4 shadow-xl">
               <span className="text-white font-body font-semibold">12 protocolos exclusivos</span>
             </div>
           </div>
@@ -52,16 +52,16 @@ export default function TratamentosPage() {
       </section>
 
       {/* FILTROS */}
-      <section className="bg-white py-6 border-b border-border-rose">
+      <section className="bg-white py-8 border-b border-border-rose sticky top-20 z-40">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             {filtros.map((filtro) => (
               <button
                 key={filtro}
                 onClick={() => setFiltroAtivo(filtro)}
-                className={`px-6 py-2 rounded-full font-body font-medium text-sm transition-all duration-300 ${
+                className={`px-6 py-2.5 rounded-full font-body font-medium text-sm transition-all duration-300 ${
                   filtroAtivo === filtro
-                    ? "bg-accent-gold text-white"
+                    ? "bg-accent-gold text-white shadow-md shadow-accent-gold/20"
                     : "bg-bg-blush text-text-primary hover:bg-accent-gold hover:text-white"
                 }`}
               >
@@ -75,16 +75,16 @@ export default function TratamentosPage() {
       {/* GRID TRATAMENTOS */}
       <section className="bg-bg-primary py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-10">
             {filtrados.map((tratamento) => (
-              <div key={tratamento.id} className="bg-white border border-border-rose rounded-[20px] p-9 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
+              <div key={tratamento.id} className="bg-white border border-border-rose rounded-[24px] p-10 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(196,149,106,0.15)] transition-all duration-300 group">
                 <span className="label text-accent-gold">{tratamento.categoria}</span>
-                <h3 className="font-display text-[28px] text-text-primary mt-2 mb-3">{tratamento.nome}</h3>
-                <p className="text-text-muted text-sm mb-6 line-clamp-2">{tratamento.descricao}</p>
-                <div className="pt-4 border-t border-border-rose">
+                <h3 className="font-display text-[28px] text-text-primary mt-3 mb-4">{tratamento.nome}</h3>
+                <p className="text-text-muted text-sm mb-8 leading-relaxed line-clamp-2">{tratamento.descricao}</p>
+                <div className="pt-6 border-t border-border-rose">
                   <div className="flex justify-between items-center">
-                    <span className="text-accent-gold font-body font-semibold">A partir de {tratamento.preco}</span>
-                    <span className="text-text-muted text-sm hover:text-accent-gold cursor-pointer transition-colors">Saiba mais →</span>
+                    <span className="text-accent-gold font-body font-semibold text-lg">A partir de {tratamento.preco}</span>
+                    <span className="text-text-muted text-sm group-hover:text-accent-gold cursor-pointer transition-colors font-semibold">Saiba mais →</span>
                   </div>
                 </div>
               </div>
@@ -94,60 +94,59 @@ export default function TratamentosPage() {
       </section>
 
       {/* PROTOCOLO DESTAQUE */}
-      <section className="bg-bg-dark py-[100px]">
+      <section className="bg-bg-dark py-[120px]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-20 items-center">
           <div>
-            <span className="label text-accent-gold mb-4">MAIS VENDIDO</span>
-            <h2 className="font-display font-bold text-[52px] text-bg-blush mb-6">
+            <span className="label text-accent-gold mb-6 tracking-widest">MAIS VENDIDO</span>
+            <h2 className="font-display font-bold text-[52px] text-bg-blush mb-6 leading-[1.1]">
               Protocolo Gold <br/>Rejuvenescimento
             </h2>
-            <p className="text-text-muted mb-8">
+            <p className="text-text-muted mb-10 text-lg leading-relaxed">
               O protocolo mais procurado combina Bioestimulação Facial + Skinbooster + Toxina Botulínica para resultados abrangentes e naturais.
             </p>
-            <ul className="space-y-4 mb-10">
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-accent-gold" />
-                <span className="text-bg-blush">3 sessões com intervalo de 30 dias</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-accent-gold" />
-                <span className="text-bg-blush">Resultado natural e progressivo</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-accent-gold" />
-                <span className="text-bg-blush">Manutenção anual recomendada</span>
-              </li>
+            <ul className="space-y-6 mb-12">
+              {["3 sessões com intervalo de 30 dias", "Resultado natural e progressivo", "Manutenção anual recomendada"].map((item, idx) => (
+                <li key={idx} className="flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-accent-gold flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <span className="text-bg-blush font-body">{item}</span>
+                </li>
+              ))}
             </ul>
             <Link
               href="/agendamento"
-              className="inline-block bg-accent-gold text-white rounded-full px-10 py-4 font-body font-semibold hover:bg-accent-mocha transition-all duration-300"
+              className="inline-block bg-accent-gold text-white rounded-full px-10 py-4 font-body font-semibold hover:bg-accent-mocha transition-all duration-300 shadow-lg shadow-accent-gold/20"
             >
               Agendar Este Protocolo →
             </Link>
           </div>
-          <div className="bg-[#2A1E17] rounded-[24px] h-[480px]" />
+          <div className="bg-gradient-to-br from-[#2A1E17] to-accent-gold/10 rounded-[32px] h-[520px] shadow-2xl" />
         </div>
       </section>
 
       {/* JORNADA */}
-      <section className="bg-bg-blush py-[100px]">
+      <section className="bg-bg-blush py-[120px]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <h2 className="font-display font-bold text-[52px] text-center text-text-primary mb-16">Sua Jornada</h2>
+          <div className="text-center mb-16">
+            <p className="label text-accent-gold mb-4 tracking-widest">COMO FUNCIONA</p>
+            <h2 className="font-display font-bold text-[52px] text-text-primary">Sua Jornada</h2>
+          </div>
 
-          <div className="flex items-center justify-between relative">
-            <div className="absolute top-8 left-[10%] right-[10%] h-[1px] border-t border-dashed border-accent-gold/30" />
+          <div className="flex items-start justify-between relative">
+            <div className="absolute top-8 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-accent-gold/20 via-accent-gold to-accent-gold/20" />
 
             {[
-              { num: "01", titulo: "Avaliação", desc: "Análise completa" },
+              { num: "01", titulo: "Avaliação", desc: "Análise completa da pele" },
               { num: "02", titulo: "Protocolo", desc: "Plano personalizado" },
               { num: "03", titulo: "Tratamento", desc: "Sessões especializadas" },
-              { num: "04", titulo: "Resultado", desc: "Transformação" },
+              { num: "04", titulo: "Resultado", desc: "Transformação visível" },
             ].map((passo, index) => (
-              <div key={index} className="relative z-10 text-center">
-                <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="font-display font-bold text-xl text-white">{passo.num}</span>
+              <div key={index} className="relative z-10 text-center flex-1">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg border-2 border-accent-gold">
+                  <span className="font-display font-bold text-xl text-accent-gold">{passo.num}</span>
                 </div>
-                <h3 className="font-display font-semibold text-2xl text-text-primary">{passo.titulo}</h3>
+                <h3 className="font-display font-semibold text-2xl text-text-primary mb-2">{passo.titulo}</h3>
                 <p className="text-text-muted text-sm">{passo.desc}</p>
               </div>
             ))}
@@ -156,20 +155,20 @@ export default function TratamentosPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent-gold py-[120px]">
+      <section className="bg-gradient-to-br from-accent-gold to-accent-mocha py-[140px]">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="font-display font-extrabold text-[72px] text-white mb-6">
+          <h2 className="font-display font-extrabold text-[72px] text-white mb-6 leading-[1.05]">
             Qual tratamento é feito para você?
           </h2>
-          <p className="text-white/80 text-lg mb-10">Agende uma avaliação gratuita e descubra o protocolo ideal para seus objetivos.</p>
+          <p className="text-white/80 text-lg mb-12">Agende uma avaliação gratuita e descubra o protocolo ideal para seus objetivos.</p>
           <div className="flex justify-center gap-6">
             <Link
               href="/agendamento"
-              className="bg-white text-text-primary rounded-full px-10 py-4 font-body font-semibold hover:bg-bg-blush transition-all duration-300"
+              className="bg-white text-text-primary rounded-full px-12 py-5 font-body font-semibold hover:bg-bg-blush transition-all duration-300 text-lg shadow-xl"
             >
               Agendar Avaliação Gratuita →
             </Link>
-            <button className="border border-white text-white rounded-full px-10 py-4 font-body font-semibold hover:bg-white hover:text-text-primary transition-all duration-300">
+            <button className="border-2 border-white text-white rounded-full px-12 py-5 font-body font-semibold hover:bg-white/10 transition-all duration-300 text-lg">
               Falar pelo WhatsApp
             </button>
           </div>

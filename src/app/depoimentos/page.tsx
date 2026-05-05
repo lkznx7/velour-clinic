@@ -20,46 +20,42 @@ export default function DepoimentosPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="bg-bg-primary pt-32 pb-20">
-        <div className="max-w-[1440px] mx-auto px-8">
+      <section className="bg-bg-primary pt-32 pb-20 min-h-[60vh] flex items-center">
+        <div className="max-w-[1440px] mx-auto px-8 py-20">
           <div className="text-center mb-16">
-            <p className="label text-accent-gold mb-4">DEPOIMENTOS REAIS</p>
-            <h1 className="font-display font-bold text-[80px] text-text-primary leading-tight">
+            <p className="label text-accent-gold mb-6 tracking-widest">DEPOIMENTOS REAIS</p>
+            <h1 className="font-display font-bold text-[80px] text-text-primary leading-[1.05]">
               Histórias reais de <br/><span className="text-accent-gold">transformação.</span>
             </h1>
           </div>
 
-          <div className="flex justify-center gap-20">
-            <div className="text-center">
-              <span className="font-display italic text-accent-gold text-[48px]">847+</span>
-              <p className="text-text-muted text-sm mt-1">Pacientes</p>
-            </div>
-            <div className="text-center">
-              <span className="font-display italic text-accent-gold text-[48px]">98%</span>
-              <p className="text-text-muted text-sm mt-1">Satisfação</p>
-            </div>
-            <div className="text-center">
-              <span className="font-display italic text-accent-gold text-[48px]">4.9★</span>
-              <p className="text-text-muted text-sm mt-1">Nota Média</p>
-            </div>
-            <div className="text-center">
-              <span className="font-display italic text-accent-gold text-[48px]">12</span>
-              <p className="text-text-muted text-sm mt-1">Anos</p>
-            </div>
+          <div className="flex justify-center gap-24">
+            {[
+              { num: "847+", label: "Pacientes" },
+              { num: "98%", label: "Satisfação" },
+              { num: "4.9★", label: "Nota Média" },
+              { num: "12", label: "Anos" },
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <span className="font-display italic text-accent-gold text-[48px] font-bold">{stat.num}</span>
+                <p className="text-text-muted text-sm mt-2">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* DEPOIMENTO HERO */}
-      <section className="bg-bg-dark py-[100px]">
+      <section className="bg-bg-dark py-[120px]">
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 gap-20 items-center">
           <div>
-            <span className="font-display text-[150px] text-accent-gold leading-none block">"</span>
+            <span className="font-display text-[160px] text-accent-gold/30 leading-none block">"</span>
           </div>
           <div>
-            <p className="font-display italic text-[36px] text-bg-blush mb-8">
+            <p className="font-display italic text-[36px] text-bg-blush mb-8 leading-relaxed">
               Depois de 8 anos me sentindo insegura com minha aparência facial, a Velour me devolveu a vontade de me olhar no espelho todos os dias.
             </p>
+            <div className="w-12 h-px bg-accent-gold mb-4" />
             <p className="text-accent-gold font-body font-semibold">Paciente Anônima · Facial Completo</p>
           </div>
         </div>
@@ -68,22 +64,22 @@ export default function DepoimentosPage() {
       {/* GRID DEPOIMENTOS */}
       <section className="bg-bg-primary py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-10">
             {depoimentos.map((depo, index) => (
-              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
-                <div className="flex gap-1 mb-4">
+              <div key={index} className="bg-white border border-border-rose rounded-[24px] p-10 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(196,149,106,0.15)] transition-all duration-300">
+                <div className="flex gap-1 mb-6">
                   {[...Array(depo.nota)].map((_, i) => (
-                    <span key={i} className="text-accent-gold">★</span>
+                    <span key={i} className="text-accent-gold text-lg">★</span>
                   ))}
                 </div>
-                <p className="font-display italic text-xl text-text-primary mb-6">"{depo.texto}"</p>
-                <div className="pt-4 border-t border-border-rose">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-bg-blush rounded-full flex items-center justify-center">
+                <p className="font-display italic text-xl text-text-primary mb-8 leading-relaxed">"{depo.texto}"</p>
+                <div className="pt-6 border-t border-border-rose">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-bg-blush to-accent-gold/10 rounded-full flex items-center justify-center">
                       <span className="text-accent-gold font-body font-semibold text-sm">{depo.nome}</span>
                     </div>
                     <div>
-                      <p className="font-body font-semibold text-sm text-text-primary">{depo.nome}</p>
+                      <p className="font-body font-semibold text-sm text-text-primary">Paciente {depo.nome}</p>
                       <p className="text-text-muted text-xs">{depo.tratamento}</p>
                     </div>
                   </div>
@@ -95,14 +91,17 @@ export default function DepoimentosPage() {
       </section>
 
       {/* VÍDEOS */}
-      <section className="bg-bg-blush py-[100px]">
+      <section className="bg-bg-blush py-[120px]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <h2 className="font-display font-bold text-[52px] text-text-primary text-center mb-16">Depoimentos em Vídeo</h2>
+          <div className="text-center mb-16">
+            <p className="label text-accent-gold mb-4 tracking-widest">EM VÍDEO</p>
+            <h2 className="font-display font-bold text-[52px] text-text-primary">Depoimentos em Vídeo</h2>
+          </div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-10">
             {[1, 2, 3].map((video, index) => (
-              <div key={index} className="bg-bg-dark rounded-[24px] h-64 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity">
-                <div className="w-20 h-20 bg-accent-gold rounded-full flex items-center justify-center">
+              <div key={index} className="bg-bg-dark rounded-[24px] h-72 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity shadow-xl group">
+                <div className="w-20 h-20 bg-accent-gold rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span className="text-white text-3xl ml-1">▶</span>
                 </div>
               </div>
@@ -114,16 +113,20 @@ export default function DepoimentosPage() {
       {/* PLATAFORMAS */}
       <section className="bg-bg-primary py-[100px]">
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-4 gap-8">
+          <div className="text-center mb-16">
+            <p className="label text-accent-gold mb-4 tracking-widest">AVALIAÇÕES</p>
+            <h2 className="font-display font-bold text-[52px] text-text-primary">Presença nas plataformas</h2>
+          </div>
+          <div className="grid grid-cols-4 gap-10">
             {[
               { plataforma: "Google", nota: "4.9★", total: "847 avaliações" },
               { plataforma: "Instagram", nota: "4.9★", total: "12.5k seguidores" },
               { plataforma: "Doctoralia", nota: "5.0★", total: "324 avaliações" },
               { plataforma: "Reclame Aqui", nota: "9.8★", total: "0 reclamações" },
             ].map((item, index) => (
-              <div key={index} className="bg-white border border-border-rose rounded-[20px] p-8 text-center hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(196,149,106,0.12)] transition-all duration-300">
+              <div key={index} className="bg-white border border-border-rose rounded-[24px] p-10 text-center hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(196,149,106,0.15)] transition-all duration-300">
                 <h3 className="font-display font-semibold text-2xl text-text-primary mb-4">{item.plataforma}</h3>
-                <span className="text-accent-gold text-4xl font-display italic block mb-2">{item.nota}</span>
+                <span className="text-accent-gold text-4xl font-display italic font-bold block mb-2">{item.nota}</span>
                 <p className="text-text-muted text-sm">{item.total}</p>
               </div>
             ))}
@@ -132,15 +135,15 @@ export default function DepoimentosPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent-gold py-[120px]">
+      <section className="bg-gradient-to-br from-accent-gold to-accent-mocha py-[140px]">
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="font-display font-extrabold text-[72px] text-white mb-6">
+          <h2 className="font-display font-extrabold text-[72px] text-white mb-6 leading-[1.05]">
             Sua história começa com uma consulta
           </h2>
-          <p className="text-white/80 text-lg mb-10">Junte-se a centenas de mulheres que transformaram sua confiança na Velour.</p>
+          <p className="text-white/80 text-lg mb-12">Junte-se a centenas de mulheres que transformaram sua confiança na Velour.</p>
           <Link
             href="/agendamento"
-            className="bg-white text-text-primary rounded-full px-10 py-4 font-body font-semibold hover:bg-bg-blush transition-all duration-300"
+            className="bg-white text-text-primary rounded-full px-12 py-5 font-body font-semibold hover:bg-bg-blush transition-all duration-300 text-lg shadow-xl"
           >
             Agendar Consulta →
           </Link>
