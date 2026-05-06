@@ -1,0 +1,262 @@
+<%- include('partials/header') %>
+
+<style>
+.booking-hero {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booking-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%) brightness(0.5);
+}
+.booking-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.6);
+}
+.booking-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.booking-section {
+  padding: 100px 0;
+}
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.booking-info h2 {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+.booking-info > p {
+  font-size: 16px;
+  color: var(--gray-400);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.info-block {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+.info-block h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--gold);
+}
+.info-block p, .info-block a {
+  font-size: 14px;
+  color: var(--gray-400);
+  line-height: 1.8;
+  text-decoration: none;
+  display: block;
+}
+.info-block a:hover {
+  color: var(--white);
+}
+.booking-form-wrapper {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 48px;
+}
+.booking-form-wrapper h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+.booking-form .form-group {
+  margin-bottom: 24px;
+}
+.booking-form .form-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.booking-form .form-input,
+.booking-form .form-select,
+.booking-form .form-textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  padding: 18px 20px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+}
+.booking-form .form-input:focus,
+.booking-form .form-select:focus,
+.booking-form .form-textarea:focus {
+  border-color: var(--gold);
+}
+.booking-form .form-input::placeholder,
+.booking-form .form-textarea::placeholder {
+  color: var(--gray-600);
+}
+.booking-form .form-select option {
+  background: var(--black);
+}
+.booking-form .form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.booking-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.booking-form .btn-submit {
+  width: 100%;
+  margin-top: 16px;
+  background: var(--gold);
+  color: var(--black);
+  border: 1px solid var(--gold);
+  padding: 20px 40px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.booking-form .btn-submit:hover {
+  background: var(--black);
+  color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+@media (max-width: 768px) {
+  .booking-form-wrapper {
+    padding: 32px 24px;
+  }
+  .booking-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="booking-hero">
+  <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80" alt="Agendamento">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Booking</span>
+    <h1 class="display-lg" style="margin-top: 16px;">Agende Sua Consulta</h1>
+  </div>
+</section>
+
+<section class="booking-section">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <h2>Sua transformação<br>começa aqui</h2>
+        <p>Preencha o formulário e nossa equipe entrará em contato em até 24 horas para confirmar seu agendamento e tirar todas as suas dúvidas.</p>
+        
+        <div class="info-block">
+          <h4>Horário de Funcionamento</h4>
+          <p>Segunda a Sexta: 9h às 20h</p>
+          <p>Sábado: 9h às 16h</p>
+          <p>Domingo: Sob agendamento</p>
+        </div>
+        
+        <div class="info-block">
+          <h4>Contato Directo</h4>
+          <a href="tel:+5511999999999">+55 11 99999-9999</a>
+          <a href="mailto:contato@velourclinic.com.br">contato@velourclinic.com.br</a>
+          <a href="#">Rua Example, 123 — São Paulo, SP</a>
+        </div>
+      </div>
+      
+      <div class="booking-form-wrapper">
+        <form class="booking-form">
+          <h3>Solicitar Agendamento</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Nome Completo</label>
+              <input type="text" class="form-input" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-input" placeholder="seu@email.com" required>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Telefone</label>
+              <input type="tel" class="form-input" placeholder="(11) 99999-9999" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tratamento</label>
+              <select class="form-select" required>
+                <option value="">Selecione um tratamento</option>
+                <option value="facial">Tratamento Facial</option>
+                <option value="corporal">Tratamento Corporal</option>
+                <option value="avancado">Tratamento Avançado</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mensagem (opcional)</label>
+            <textarea class="form-textarea" placeholder="Conte-nos sobre seus objetivos e expectativas..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Enviar Solicitação</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--gray-800);">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-item">
+        <span class="stat-number">3.000+</span>
+        <span class="stat-label">Clientes Atendidas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">Satisfação</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Tratamentos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5+</span>
+        <span class="stat-label">Anos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
