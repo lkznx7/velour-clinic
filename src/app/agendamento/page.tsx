@@ -19,7 +19,7 @@ export default function AgendamentoPage() {
       {/* HERO BOOKING */}
       <section className="bg-bg-primary pt-40 pb-20 min-h-screen flex items-center">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <p className="label text-accent-gold mb-4">Agendamento</p>
             <h1 className="font-display text-[80px] text-text-primary leading-[0.95] mb-8">
               Sua transformação<br/><span className="italic text-accent-gold">começa aqui.</span>
@@ -42,7 +42,7 @@ export default function AgendamentoPage() {
             </Link>
           </div>
 
-          <div className="card-soft">
+          <div className="card-soft pr-4">
             <h2 className="font-display text-2xl text-text-primary mb-8">Agende Sua Avaliação</h2>
             <form className="space-y-5">
               <div>
@@ -121,10 +121,10 @@ export default function AgendamentoPage() {
 
       {/* FAQ */}
       <section className="bg-bg-dark section-pad">
-        <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16">
-          <div>
+        <div className="max-w-[700px] mx-auto px-6">
+          <div className="text-center mb-16">
             <p className="label text-accent-gold mb-4">Perguntas frequentes</p>
-            <h2 className="font-display text-5xl text-bg-blush mb-10">Tire suas dúvidas</h2>
+            <h2 className="font-display text-5xl text-bg-blush">Tire suas dúvidas</h2>
           </div>
           <div className="space-y-6">
             {faqs.map((faq, i) => (

@@ -10,7 +10,7 @@ export default function Home() {
       {/* HERO */}
       <section className="bg-bg-primary pt-40 pb-20 min-h-screen flex items-center">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <p className="label text-accent-gold mb-8">Alta Medicina Estética · São Paulo</p>
             <h1 className="font-display font-semibold text-[110px] leading-[0.9] text-text-primary mb-8">
               Sua pele<br/>merece o<br/><span className="italic text-accent-gold">extraordinário.</span>
@@ -27,7 +27,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative">
+          <div className="pr-4 relative">
             <div className="bg-bg-blush rounded-2xl h-[500px] w-full" />
             <div className="absolute bottom-6 left-6 bg-white rounded-xl px-6 py-4">
               <p className="font-body text-sm text-text-primary font-medium">4.9 ★ · 847 pacientes</p>
@@ -82,14 +82,14 @@ export default function Home() {
       {/* SOLUÇÃO */}
       <section className="bg-bg-dark section-pad">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <div className="w-px h-16 bg-accent-gold mb-6" />
             <p className="label text-accent-gold mb-4">Nossa solução</p>
             <h2 className="font-display text-5xl text-bg-blush leading-tight">
               Uma presença digital<br/>que seduz e converte.
             </h2>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-8 pr-4">
             {[
               "Performance extrema, nenhuma perda de visitantes",
               "Jornada otimizada para conversão em cada clique",

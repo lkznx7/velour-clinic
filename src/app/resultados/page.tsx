@@ -29,13 +29,13 @@ export default function ResultadosPage() {
       {/* HERO */}
       <section className="bg-bg-primary pt-40 pb-20 min-h-[60vh] flex items-center">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <p className="label text-accent-gold mb-4">Resultados reais</p>
             <h1 className="font-display text-[80px] text-text-primary leading-[0.95]">
               Resultados que<br/>você pode <span className="italic text-accent-gold">ver.</span>
             </h1>
           </div>
-          <div className="flex gap-4">
+          <div className="pr-4 flex gap-4">
             <div className="flex-1 bg-bg-blush rounded-2xl h-[360px]" />
             <div className="w-px bg-accent-gold/20 self-stretch" />
             <div className="flex-1 bg-accent-gold/10 rounded-2xl h-[360px]" />

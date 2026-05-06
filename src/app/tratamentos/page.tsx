@@ -36,13 +36,13 @@ export default function TratamentosPage() {
       {/* HERO */}
       <section className="bg-bg-dark pt-40 pb-20 min-h-[60vh] flex items-center">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <p className="label text-accent-gold mb-4">Portfólio completo</p>
             <h1 className="font-display text-[80px] text-bg-blush leading-[0.95]">
               Tratamentos que<br/><span className="italic text-accent-gold">transformam.</span>
             </h1>
           </div>
-          <div>
+          <div className="pr-4">
             <div className="bg-[#2A1E17] rounded-2xl h-[400px]" />
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function TratamentosPage() {
       {/* PROTOCOLO DESTAQUE */}
       <section className="bg-bg-dark section-pad">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <span className="label text-accent-gold mb-4">Mais vendido</span>
             <h2 className="font-display text-5xl text-bg-blush mb-6">Protocolo Gold<br/>Rejuvenescimento</h2>
             <p className="text-text-muted mb-8 leading-relaxed">
@@ -105,7 +105,9 @@ export default function TratamentosPage() {
             </div>
             <Link href="/agendamento" className="btn-primary">Agendar Este Protocolo →</Link>
           </div>
-          <div className="bg-[#2A1E17] rounded-2xl h-[440px]" />
+          <div className="pr-4">
+            <div className="bg-[#2A1E17] rounded-2xl h-[440px]" />
+          </div>
         </div>
       </section>
 

@@ -17,13 +17,13 @@ export default function SobrePage() {
       {/* HERO */}
       <section className="bg-bg-dark pt-40 pb-20 min-h-[60vh] flex items-center">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="pl-4">
             <p className="label text-accent-gold mb-4">Nossa história</p>
             <h1 className="font-display text-[80px] text-bg-blush leading-[0.95]">
               Fundada na crença<br/>de que beleza é<br/><span className="italic text-accent-gold">autoconfiança.</span>
             </h1>
           </div>
-          <div>
+          <div className="pr-4">
             <div className="bg-[#2A1E17] rounded-2xl h-[400px]" />
           </div>
         </div>
@@ -42,12 +42,10 @@ export default function SobrePage() {
 
       {/* VALORES */}
       <section className="bg-bg-primary section-pad">
-        <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16">
-          <div>
-            <p className="label text-accent-gold mb-4">Valores</p>
-            <h2 className="font-display text-5xl text-text-primary">O que nos guia</h2>
-          </div>
-          <div className="space-y-10">
+        <div className="max-w-[700px] mx-auto px-6 text-center">
+          <p className="label text-accent-gold mb-4">Valores</p>
+          <h2 className="font-display text-5xl text-text-primary mb-16">O que nos guia</h2>
+          <div className="space-y-12">
             {[
               { title: "Precisão Científica", desc: "Cada procedimento é baseado em evidências. Priorizamos resultados comprovados." },
               { title: "Cuidado Individualizado", desc: "Protocolos personalizados para suas características e objetivos específicos." },
@@ -85,18 +83,18 @@ export default function SobrePage() {
       {/* CLÍNICA */}
       <section className="bg-bg-dark section-pad">
         <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-2 gap-16 items-center">
-          <div className="bg-[#2A1E17] rounded-2xl h-[400px]" />
-          <div>
+          <div className="pl-4">
+            <div className="bg-[#2A1E17] rounded-2xl h-[400px]" />
+          </div>
+          <div className="space-y-4 pr-4">
             <p className="label text-accent-gold mb-4">Nosso espaço</p>
             <h2 className="font-display text-5xl text-bg-blush mb-8">Um espaço pensado<br/>para você</h2>
-            <div className="space-y-4">
-              {["Ambiente privativo e acolhedor", "Tecnologia de última geração", "Protocolos de segurança rigorosos", "Equipe altamente qualificada"].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-bg-blush/80 text-sm">{item}</span>
-                </div>
-              ))}
-            </div>
+            {["Ambiente privativo e acolhedor", "Tecnologia de última geração", "Protocolos de segurança rigorosos", "Equipe altamente qualificada"].map((item, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
+                <span className="text-bg-blush/80 text-sm">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
